@@ -9,7 +9,6 @@ ytpro is a script for playing and downloading youtube videos/audios from termux.
 3. Download videos in 720p and 1080p
 4. Download audio in best available quality.
 5. Download audio in mp3
-6. comming soon..:)
 
 ## Installation:- 
 
@@ -19,10 +18,10 @@ pkg upgrade -y
 # install git
 pkg install git -y
 # clone the tool
-git clone https://github.com/BDhaCkers009/ytpro.git
+git clone https://github.com/Noob-hacker-xy/YT-video-Pro
 
 # navigate to the tools folder
-cd ytpro
+cd YT-video-Pro
 
 # run the installer script
 
@@ -49,8 +48,8 @@ Now if you want to listen the audio then select 1 and press enter it will play t
 After downloading the  audio or video you can find it on your **Phone Storage** there you will find **YouTube** named folder and inside that folder you will find the downloaded audio or video. 
 
 
-### Special Thanks:
-- [**Tahmid Rayat (HTR-TECH)**](https://github.com/htr-tech)
+### My Facebook ID:
+- [**Abdul Korim (STLP TEAM)**](https://www.facebook.com/abdulkorimstlpteam)
 
 ## Note:-
 
