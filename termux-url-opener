@@ -1,0 +1,124 @@
+#!/bin/bash
+##Whole code is fully written by Noob-Hacker-XY please dont copy or if you copy then give credit
+url=$1
+location="/sdcard/YouTube video dounload by korim"
+pak() {
+echo "
+
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+echo "Video Resolution:-"
+echo "[1] Download Video in 720p "
+echo
+echo
+echo "[2] Download video in 1080p"
+echo
+echo
+echo
+read -p "Select resolution (default 2): " res
+
+if [[ ${res} == "1" ]]; then
+        sed -i 's/299/298/' $HOME/.config/yt-dlp/config && sed -i 's/137/136/' $HOME/.config/yt-dlp/config
+elif [[ ${res} == "2" ]]; then
+        sed -i 's/298/299/' $HOME/.config/yt-dlp/config && sed -i 's/136/137/' $HOME/.config/yt-dlp/config
+else
+        sed -i 's/299/298/' $HOME/.config/yt-dlp/config && sed -i 's/137/136/' $HOME/.config/yt-dlp/config
+fi
+echo "Downloading video,wait.."
+echo ""
+echo ""
+echo "Downloading Video  in ${location}"
+sleep 3
+clear
+yt-dlp ${url}
+}
+
+echo "
+
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+
+echo "Options:- "
+echo ""
+echo "[1] play audio (without download)"
+echo ""
+echo "[2] download video (with yt-dlp)"
+echo ""
+echo "[3] download only audio (bestaudio quality)"
+echo 
+echo "[4] download only audio (mp3)"
+echo 
+echo 
+read -p "Select Option (default 1): " select
+echo ""
+
+if [ ${select} == "1" ]; then
+echo "
+
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+  echo "playing audio,wait..."
+  clear
+  mpv ${url}
+elif [ ${select} == "2" ]; then
+echo "
+
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+  if [[ -d ${location} ]]; then
+    pak
+  else
+    mkdir ${location}
+    pak
+  fi
+
+elif [[ ${select} == "3" ]]; then
+echo "
+
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+  yt-dlp  -f 'ba' ${url} --sponsorblock-remove all
+
+elif [[ ${select} == "4" ]]; then
+echo "
+██╗░░██╗░█████╗░██████╗░██╗███╗░░░███╗
+██║░██╔╝██╔══██╗██╔══██╗██║████╗░████║
+█████═╝░██║░░██║██████╔╝██║██╔████╔██║
+██╔═██╗░██║░░██║██╔══██╗██║██║╚██╔╝██║
+██║░╚██╗╚█████╔╝██║░░██║██║██║░╚═╝░██║
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝
+"
+  yt-dlp -f 'ba' -x --audio-format mp3 ${url} --sponsorblock-remove all
+else
+  clear
+  mpv ${url}
+fi
+
+
+
+
